@@ -1,0 +1,35 @@
+.select_catalog{
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.select_catalog p{
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 1rem;
+    font-family: Arimo,Arial,Helvetica,"Lucida Grande",sans-serif;
+    background-image: -webkit-linear-gradient(left, #ee4463, #b119a2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#choose_Option{
+    text-align: center;
+}
+
+
+.chooser {
+    /* border: 2px solid green; */
+    /* width: 80%; */
+    text-align: center;
+}
+
+.select_catalog .process p{
+    font-size: 1rem;
+    text-align: initial;
+    /* border: 2px solid red; */
+}

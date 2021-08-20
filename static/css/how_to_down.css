@@ -1,0 +1,36 @@
+.lapi_process{
+        width: 93%;
+        margin: 1rem auto; 
+        text-align: center;
+}
+
+.mobile_process{
+    width: 93%;
+    margin: 1rem auto; 
+    text-align: center;
+}
+
+.lapi h1{
+    font-size: 2rem;
+    color: rgb(70, 230, 70);
+    font-family: Arimo,Arial,Helvetica,"Lucida Grande",sans-serif;
+}
+.lapi p{
+    font-size: 1.3rem;
+    color: rgb(39, 246, 20);
+    color: white;
+    opacity: .9;
+    font-family: Arimo,Arial,Helvetica,"Lucida Grande",sans-serif;
+}
+
+.step_1 h2{
+ color: rgb(95, 218, 95);
+ margin-top: 1rem;
+ font-size: 1.3rem;
+ font-family: Arimo,Arial,Helvetica,"Lucida Grande",sans-serif;
+}
+
+.step_img img{
+    height: 23rem;
+    padding: .7rem 1rem;
+}

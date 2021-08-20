@@ -1,0 +1,73 @@
+{% extends 'base.html' %} 
+{% block title %}MovieFX{% endblock %} 
+{% block body%} 
+
+<section id="services-container">
+  {% if action %}
+  <h1 class="h-primary center">{{cat}} Movies</h1>
+  {% else %}
+  <h1 class="h-primary center">
+    {{cat}} Movies : Sorry Currently There are no movies.
+  </h1>
+  {% endif %}
+
+  <hr />
+  <div id="feature_product">
+    <div class="feature_product">
+      {% for tr in action.object_list %}
+      <div class="item">
+        <div class="poster">
+          <a href="/movie{{tr.movie_id}}"
+            ><img src="/media/{{tr.image}}" alt=""
+          /></a>
+        </div>
+        <div class="details">
+          <div>
+            <a href="/movie{{tr.movie_id}}">
+              <h2>{{tr.movie_name}}</h2>
+            </a>
+          </div>
+          <div>
+            <h2>({{tr.year}})</h2>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div align ="center">
+    <div id="pager_links">
+      {% if action.has_other_pages %}
+      <!-- <ul class="pagination"> -->
+
+        {% if action.has_previous %}
+        <a href="?page={{ action.previous_page_number }}">&laquo;</a>
+        {% else %}
+        <a class="disabled"><span>&laquo;</span></a>
+        {% endif %}
+        
+        {% for i in action.paginator.page_range %}
+          {% if action.number == i %}
+            <a class="active">
+            <span>{{ i }}</span>
+            </a>
+          {% else %}
+            <a href="?page={{ i }}">{{ i }}</a>
+          {% endif %}
+        {% endfor %}
+        
+        {% if action.has_next %}
+          <a href="?page={{ action.next_page_number }}">&raquo;</a>
+        {% else %}
+          <a class="disabled"><span>&raquo;</span></a>
+        {% endif %}
+      <!-- </ul> -->
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

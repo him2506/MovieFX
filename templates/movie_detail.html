@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}MovieFX{% endblock %}
+
+
+{% block body %}
+
+<div class="movie_poster">
+       <div>
+           <img src="/media/{{movie.image}}" alt="">
+       </div>
+
+       <div>
+            <h1>
+                {{movie.movie_name}}
+            </h1>
+            <h2>Year : {{movie.year}}</h2>
+            <div id="choose_Option">
+                <p>Generous :</p>
+                <div>
+                    {% if movie.action %}
+                    <button> <a href="{% url 'actionmovie' %}"> Action</a></button>
+                    {% endif %}
+                    {% if movie.adventure %}
+                    <button> <a href="{% url 'adventuremovie' %}"> Adventure</a></button>
+                    {% endif %}
+                    {% if movie.animation %}
+                    <button> <a href="{% url 'animationmovie' %}">Animation</a></button>
+                    {% endif %}
+                    {% if movie.comedy %}
+                    <button> <a href="{% url 'comedymovie' %}">Comedy</a></button>
+                    {% endif %}
+                    {% if movie.crime %}
+                    <button> <a href="{% url 'crimemovie' %}">Crime</a></button>
+                    {% endif %}
+                    {% if movie.documentry %}
+                    <button> <a href="{% url 'documentrymovie' %}">Documentry</a></button>
+                    {% endif %}
+                    {% if movie.drama %}
+                    <button> <a href="{% url 'dramamovie' %}">Drama</a></button>
+                    {% endif %}
+                    {% if movie.family %}
+                    <button> <a href="{% url 'familymovie' %}">Family</a></button>
+                    {% endif %}
+                    {% if movie.fantasy %}
+                    <button> <a href="{% url 'fantasymovie' %}">Fantasy</a></button>
+                    {% endif %}
+                    {% if movie.history %}
+                    <button> <a href="{% url 'historymovie' %}">History</a></button>
+                    {% endif %}
+                    {% if movie.horror %}
+                    <button> <a href="{% url 'horrormovie' %}">Horror</a></button>
+                    {% endif %}
+                    {% if movie.musical %}
+                    <button> <a href="{% url 'musicalmovie' %}">Musical</a></button>
+                    {% endif %}
+                    {% if movie.mystery %}
+                    <button> <a href="{% url 'mysterymovie' %}">Mystery</a></button>
+                    {% endif %}
+                    {% if movie.sci_fi %}
+                    <button> <a href="{% url 'sci_fimovie' %}">Sci-fi</a></button>
+                    {% endif %}
+                    {% if movie.sport %}
+                    <button> <a href="{% url 'sportmovie' %}">Sport</a></button>
+                    {% endif %}
+                    {% if movie.thriller %}
+                    <button> <a href="{% url 'thrillermovie' %}">Thriller</a></button>
+                    {% endif %}
+                    {% if movie.war %}
+                    <button> <a href="{% url 'warmovie' %}">War</a></button>
+                    {% endif %}
+                </div>
+                
+            </div>
+            <div class="download">
+                <p>Magnet Link :</p>
+                <button><a href="{{movie.magnet_link_720p}}">720p</a></button>
+                <button><a href="{{movie.magnet_link_1080p}}">1080p</a></button>
+            </div>
+
+            <p>Language :
+                {% if movie.English %}
+                English
+                {% endif %}
+                {% if movie.Hindi %}
+                , Hindi
+                {% endif %}
+            </p>
+
+            <p>Likes : {{movie.likes}}%</p>
+            <button> <a href="{{movie.trailer_link}}" target="_blank" >Play Trailer</a></button>
+            
+       </div>
+       <div>
+
+       </div>
+
+   </div>
+
+{% endblock %}

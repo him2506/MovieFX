@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MovieFX</title>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/index.css">
+        <link rel="stylesheet" media="screen and (max-width: 1200px)" href="/static/css/tab.css">
+        <link rel="stylesheet" media="screen and (max-width: 980px)" href="/static/css/phone.css">
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+        <style>
+          body {background-color: white;}
+          h1   {color: blue;}
+          p    {display: none;}
+          a    {display: none;}
+          h1    {display: none;}
+          picture    {display: none;}
+          iframe    {display: none;}
+          video {
+          height: 700px;
+          width: 1200px;
+          border: 2px solid black;
+          }
+          b{
+            font-family: 'Zen Dots', cursive;
+           }
+          *{font-family: 'Zen Dots', cursive;
+        margin: 0px 10px;}
+          </style>
+    </head>
+    <body>
+        <nav id="navbar">
+            <div id="logo">
+                <!-- <img src="img/logo2.jpg" alt="MovieFX"> -->
+                <h2 style="font-size: 2rem;">MovieFX.Live</h2>
+            </div>
+            
+           <div id="home_link">
+    
+                <ul>
+                <li class="item"><a href="/">Home</a></li>
+                <li class="item"><a href="/browse">Browse</a></li>
+                <li class="item"><a href="/how_to_download">How to Download</a></li>
+                <li class="item"><a href="/othersites">Other Websites</a></li>
+                                    
+                </ul>
+            </div>
+            
+        </nav>
+        <main>
+            
+            <p class="subtitle">
+                Streaming file transfer over <a href="http://webtorrent.io" target="_blank">WebTorrent</a>
+                (torrents on the web)
+            </p>
+            <h1 id="logHeading" style="display: none">Log</h1>
+            <div class="speed"></div>
+            <div class="log"></div>
+            <section>
+                <h1>Start sharing</h1>
+                <p>
+                    Drag-and-drop files to begin seeding. Or choose a file:
+                    <input type="file" name="upload" multiple>
+                </p>
+            </section>
+            <section>
+                <h1>Start downloading</h1>
+                <form>
+                    <label for="torrentId" style="margin: auto 0px;">Download from a magnet link</label>
+                    <input name="torrentId" value="" required style="border: 3px solid #9c58cd;
+                    border-radius: 16px;
+                    height: 3rem;
+                    display:block">
+                    <button type="submit">Download</button>
+                </form>
+            </section>
+            <h4>Copy any magnet link from this site and paste here and click download. Wait for 2-3 minutes. Your Movie/Tvshow will stream. </h4>
+            <h3>Notice : Some time due to server overload and poor peers it take more than 3 minutes.</h3>
+        </main>
+        <script src="/static/js/bundle.js"></script>
+        
+    </body>
+</html>

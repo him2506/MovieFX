@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/browse.css">
+    <link rel="stylesheet" href="/static/css/browsemovies.css">
+    <link rel="stylesheet" href="/static/css/movie_detail.css">
+    <link rel="stylesheet" href="/static/css/movie_list.css">
+    <link rel="stylesheet" href="/static/css/how_to_down.css">
+    <link rel="stylesheet" href="/static/css/myhome.css">
+    <link rel="stylesheet" href="/static/css/search_title.css">
+    <link rel="stylesheet" media="screen and (max-width: 1200px)" href="/static/css/tab.css">
+    <link rel="stylesheet" media="screen and (max-width: 980px)" href="/static/css/phone.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&family=Bree+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <h1> <a href="/">MovieFX</a></h1>
+        </div>
+        <div class="search_box ">
+            <form  method="get" action="{% url 'search' %}">
+                    <input type="search" name="search" id="" placeholder="Search here.."  >
+                    <button type="submit">Search</button>
+            </form>
+        </div>
+        <div id="home_link">
+
+            <ul>
+                <li class="item"><a href="/">Home</a></li>
+                <li class="item"><a href="/browse">Browse</a></li>
+                <li class="item"><a href="/how_to_download">How to Download</a></li>
+                <li class="item"><a href="/othersites">Other Websites</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+
+    {% block body %}
+
+    {% endblock %}
+
+
+
+    <footer>
+        <div class="copyright">
+            <h5>Copyright &copy; 2020 All rights reserved &nbsp;|&nbsp;Designed With <span class="heart"></span> by
+               <a href="/othersites">Himanchal Singh</a></h5>
+             <p>
+                 By using this site you are agree to accept our User Agreement.
+            </p>
+            {% if count %}
+            <p style="color:rgb(54 117 233);">Total Visitors : {{count}}</p>
+            {% endif %}
+        </div>
+
+    </footer>
+
+</body>
+</html>

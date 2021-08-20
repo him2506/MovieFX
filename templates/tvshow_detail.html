@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}MovieFX{% endblock %}
+
+
+{% block body %}
+
+<div class="movie_poster">
+       <div>
+           <img src="/media/{{tvshow.image}}" alt="">
+       </div>
+
+       <div>
+            <h1>
+                {{tvshow.name}}
+            </h1>
+            <h2>Year : {{tvshow.year}}</h2>
+            <div id="choose_Option">
+
+                <div>
+                        {% for i in season %}
+                            <button> <a href="/tvshow{{tvshow.id}}/season{{i}}">Season {{i}}</a></button>
+                        {% endfor %}
+
+                </div>
+                
+            </div>
+
+            <p>Language :
+                {% if tvshow.English %}
+                English
+                {% endif %}
+                {% if tvshow.Hindi %}
+                , Hindi
+                {% endif %}
+            </p>
+
+            <p>Likes : {{tvshow.likes}}%</p>
+            <button> <a href="{{tvshow.trailer_link}}" target="_blank" >Play Trailer</a></button>
+            <!-- <button> <a href="{% url 'live' %}">Watch This TvShow Live </a></button> -->
+        </div>
+       <div>
+
+       </div>
+
+   </div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}MovieFX{% endblock %}
+
+
+{% block body %}
+
+            <div class="search_title">
+                {% if movie_list or tv_list %}
+                <h2 class="h-primary center">Searching For :  "{{qur}}" </h2>
+                {% else %}
+                       <h2 class="h-primary center">Searching For "{{qur}}" : Not Found</h2>
+                {% endif %}
+
+            </div>
+            <hr>
+
+
+
+     <section id="services-container">
+        <h1 class="h-primary center">Movies</h1>
+        <hr>
+        <div id="feature_product">    
+            <div class="feature_product">
+                {% for tr in movie_list %}
+                <div class="item">
+                    <div class="poster">
+
+                        <a href="/movie{{tr.movie_id}}"><img src="/media/{{tr.image}}" alt=""></a>
+                    </div>
+                    <div class="details">
+                        <div>
+                            <a href="/movie_detail.html">
+                                <h2>{{tr.movie_name}}</h2>
+                            </a>    
+                        </div>
+                        <div>
+                            
+                                <h2>({{tr.year}})</h2>
+                    
+                        </div>
+                     </div>
+                </div>
+                {% endfor %}
+                    
+            </div>
+        </div>
+    </section>
+
+
+    <section id="services-container">
+        <h1 class="h-primary center">Tv Shows</h1>
+        <hr>
+        <div id="feature_product">    
+            <div class="feature_product">
+                {% for tr in tv_list %}
+                <div class="item">
+                    <div class="poster">
+                         <a href="/tvshow{{tr.id}}"><img src="/media/{{tr.image}}" alt=""></a>
+                    </div>
+                    <div class="details">
+                        <div>
+                            <a href="/tvshow{{tr.id}}"><h2>{{tr.name}}</h2></a>
+                        </div>
+                        <div>
+
+                            <h2>({{tr.year}})</h2>
+
+                        </div>
+                     </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

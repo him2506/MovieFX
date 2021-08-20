@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}MovieFX{% endblock %}
+
+
+{% block body %}
+
+    <section id="home">
+        <h1 class="h-primary"> Welcome To MovieFX</h1>
+        
+        <p>Here you can browse and download movies & tv shows in excellent 720p, 1080p quality.</p>
+             
+    </section>
+
+    <section id="services-container">
+        <h1 class="h-primary center">Trending Movies</h1>
+        <hr>
+        <div id="feature_product">    
+            <div class="feature_product">
+                {% for tr in trend %}
+                <div class="item">
+                    <div class="poster">
+
+                        <a href="/movie{{tr.movie_id}}"><img src="media/{{tr.image}}" alt=""></a>
+                    </div>
+                    <div class="details">
+                        <div>
+                            <a href="/movie{{tr.movie_id}}">
+                                <h2>{{tr.movie_name}}</h2>
+                            </a>    
+                        </div>
+                        <div>
+                            
+                                <h2>({{tr.year}})</h2>
+                    
+                        </div>
+                     </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="Notice_board">
+        <div>
+           <h1> Notice Board </h1> 
+           <p>For Any Request of Movie or TvShows,Please message this Telegram group(MovieFX).To join this group<a href="https://t.me/joinchat/nNUg4duqzLliYjM1" style="color:rgb(45, 233, 45);"> tap here</a></p>
+        </div>
+
+    </section>
+
+
+
+
+    <section id="services-container">
+        <h1 class="h-primary center">Trending Tv Shows</h1>
+        <hr>
+        <div id="feature_product">    
+            <div class="feature_product">
+                {% for tr in upcome %}
+                <div class="item">
+                    <div class="poster">
+                         <a href="/tvshow{{tr.id}}"><img src="media/{{tr.image}}" alt=""></a>
+                    </div>
+                    <div class="details">
+                        <div>
+                            <a href="/tvshow{{tr.id}}"><h2>{{tr.name}}</h2></a>
+                        </div>
+                        <div>
+
+                            <h2>({{tr.year}})</h2>
+
+                        </div>
+                     </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

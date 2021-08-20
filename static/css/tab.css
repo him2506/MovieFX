@@ -1,0 +1,21 @@
+
+#navbar{
+   flex-direction: column;
+   position: relative;
+}
+
+.search_box{
+    width: 92%;
+}
+
+#home_link{
+    width: max-content;
+}
+
+
+
+
+
+
+
+

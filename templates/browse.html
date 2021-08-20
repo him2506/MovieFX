@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}MovieFX{% endblock %}
+
+
+{% block body %}
+<section class="select_catalog">
+        <div class="chooser">
+
+            <p>
+                Please Choose a Catalog
+            </p> 
+            <div id="choose_Option">
+                <button> <a href="/browse/movie"> Movies</a></button>
+                <button> <a href="/browse/tvshows"> TV Shows</a></button>
+            </div>
+        </div>
+
+</section>
+{% endblock %}

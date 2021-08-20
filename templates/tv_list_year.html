@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}MovieFX{% endblock %}
+
+
+{% block body %}
+
+
+    <section id="services-container">
+
+        {% if tvshows_list %}
+                <h1 class="h-primary center">"{{cat}}" Tv Shows</h1>
+        {% else %}
+                <h1 class="h-primary center">Sorry Currently There are no Tv Shows from year "{{cat}}"</h1>
+        {% endif %}
+
+
+<!--        <h1 class="h-primary center">Action Movies</h1>-->
+        <hr>
+        <div id="feature_product">    
+            <div class="feature_product">
+                <!-- <h2>Page No . {{tvshows_list.number}}</h2> -->
+                {% for tr in tvshows_list.object_list %}
+                <div class="item">
+                    <div class="poster">
+
+                        <a href="/tvshow{{tr.id}}"><img src="/media/{{tr.image}}" alt=""></a>
+                    </div>
+                    <div class="details">
+                        <div>
+                            <a href="/tvshow{{tr.id}}">
+                                <h2>{{tr.name}}</h2>
+                            </a>
+                        </div>
+                     </div>
+                </div>
+                {% endfor %}
+
+                
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div align ="center">
+          <div id="pager_links">
+            {% if tvshows_list.has_other_pages %}
+            <!-- <ul class="pagination"> -->
+      
+              {% if tvshows_list.has_previous %}
+              <a href="?page={{ tvshows_list.previous_page_number }}">&laquo;</a>
+              {% else %}
+              <a class="disabled"><span>&laquo;</span></a>
+              {% endif %}
+              
+              {% for i in tvshows_list.paginator.page_range %}
+                {% if tvshows_list.number == i %}
+                  <a class="active">
+                  <span>{{ i }}</span>
+                  </a>
+                {% else %}
+                  <a href="?page={{ i }}">{{ i }}</a>
+                {% endif %}
+              {% endfor %}
+              
+              {% if tvshows_list.has_next %}
+                <a href="?page={{ tvshows_list.next_page_number }}">&raquo;</a>
+              {% else %}
+                <a class="disabled"><span>&raquo;</span></a>
+              {% endif %}
+            <!-- </ul> -->
+            {% endif %}
+          </div>
+        </div>
+      </section>
+
+{% endblock %}

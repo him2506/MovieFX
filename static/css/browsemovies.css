@@ -1,0 +1,27 @@
+.Movie_By_catalog{
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 3px solid red; */
+    
+}
+
+
+.Movie_By_catalog h4{
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 1rem 1rem;
+    font-family: Arimo,Arial,Helvetica,"Lucida Grande",sans-serif;
+    background-image: -webkit-linear-gradient(left, #ee4463, #42df1a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 3px solid green;
+    margin: 1rem 1rem;
+}
+
+#choose_Option{
+    text-align: center;
+    flex-wrap: wrap;
+}

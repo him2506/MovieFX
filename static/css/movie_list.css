@@ -1,0 +1,32 @@
+#pager_links {
+    display: inline-block;
+   
+  }
+  
+#pager_links a {
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: Arimo,Arial,Helvetica,"Lucida Grande",sans-serif;
+    margin: 2px 4px;
+    border: 1px solid green;
+}
+  
+#pager_links a.active{
+    background-color: #4CAF50;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    
+  }
+  
+#pager_links a:hover:not(.active) {
+    background-color: #ddd;
+    background-color: #4CAF50;
+    background-color: green;
+    border-radius: 5px;
+    
+
+    
+  }
